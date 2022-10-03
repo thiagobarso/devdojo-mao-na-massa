@@ -1,0 +1,20 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="../WEB-INF/templates/template.xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:o="http://omnifaces.org/ui"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<o:form>
+			<h:panelGrid columns="1">
+				<p:outputLabel value="Name" for="name" />
+				<p:inputText value="#{courseRegisterBean.course.name}" id="name" required="true" requiredMessage="Name is required."/>
+			</h:panelGrid>
+			<h:panelGrid columns="2">
+				<p:link outcome="list"><p:button value="Cancel" /></p:link>
+				<p:commandButton value="Save" action="#{courseRegisterBean.save}" />
+			</h:panelGrid>
+		</o:form>
+	</ui:define>
+</ui:composition>
